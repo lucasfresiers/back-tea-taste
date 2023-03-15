@@ -1,6 +1,9 @@
 --liquibase formatted sql
 
 --changeset lucas:1
+
+CREATE SEQUENCE t_user_seq START 1;
+
 create table t_user (
   id serial primary key,
   username varchar(255),
@@ -10,5 +13,5 @@ create table t_user (
   password varchar(255)
 );
 
-insert into t_user (username, nom, prenom, mail, password)
-	values ('admin', 'fresiers', 'lucas', 'fresiers.lucas@gmail.com', 'admin');
+insert into t_user
+	values (nextval('t_user_seq'), 'admin', 'fresiers', 'lucas', 'fresiers.lucas@gmail.com', 'admin');

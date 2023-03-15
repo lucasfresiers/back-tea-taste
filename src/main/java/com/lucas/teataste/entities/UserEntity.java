@@ -1,8 +1,6 @@
 package com.lucas.teataste.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 
@@ -13,6 +11,9 @@ import lombok.Getter;
 public class UserEntity {
 
     @Id
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE
+    )
     private Long id;
     private String username;
     private String nom;

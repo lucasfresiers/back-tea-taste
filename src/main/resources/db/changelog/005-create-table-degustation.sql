@@ -1,19 +1,18 @@
 CREATE TABLE t_degustation(
    id          SERIAL  NOT NULL PRIMARY KEY 
-  ,marque      VARCHAR(255) NOT NULL
+  ,marque      INTEGER NOT NULL
   ,variete     INTEGER NOT NULL
-  ,nom         VARCHAR(15) NOT NULL
-  ,commentaire VARCHAR(19) NOT NULL
+  ,nom         VARCHAR(255) NOT NULL
+  ,commentaire VARCHAR(255) NOT NULL
   ,score       INTEGER NOT NULL
   ,pays        INTEGER NOT NULL
-  ,CONSTRAINT fk_marque_id(id)
-      FOREIGN KEY(id)
-      REFERENCES t_marque(id)
-  ,CONSTRAINT fk_variete_id
-      FOREIGN KEY(id)
+  ,FOREIGN KEY (marque)
+         REFERENCES t_marque (id)
+  ,
+      FOREIGN KEY(variete)
       REFERENCES t_variete(id)
-  ,CONSTRAINT fk_pays_id(id)
-      FOREIGN KEY(id)
+  ,
+      FOREIGN KEY(pays)
       REFERENCES t_pays(id)
 );
 

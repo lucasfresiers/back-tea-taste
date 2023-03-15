@@ -3,3 +3,9 @@ databaseChangeLog:
                 file: db/changelog/001-create-table-user.sql
         - include:
                 file: db/changelog/002-create-table-pays.sql
+        - include:
+                  file: db/changelog/003-create-table-variete.sql
+        - include:
+                  file: db/changelog/004-create-table-marque.sql
+        - include:
+                  file: db/changelog/005-create-table-degustation.sql
